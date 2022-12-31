@@ -1,0 +1,28 @@
+{
+    "name": "talent_cypress",
+    "version": "1.0.0",
+    "description": "testes cypress",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "cypress": "npx cypress open",
+      "allure": "npx cypress run --env allure=true",
+      "lint": "npx eslint . --ext .ts"
+    },
+    "author": "warnner sinotti",
+    "license": "ISC",
+  "devDependencies": {
+    "cypress": "^12.2.0",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "@shelex/cypress-allure-plugin": "^2.34.0",
+    "@typescript-eslint/eslint-plugin": "^5.42.1",
+    "@typescript-eslint/parser": "^5.42.1",
+    "cypress-xpath": "^2.0.1",
+    "dotenv": "^16.0.3",
+    "eslint": "^8.27.0",
+    "eslint-plugin-cypress": "^2.12.1",
+    "faker-br": "^0.4.1"
+  }
+}
