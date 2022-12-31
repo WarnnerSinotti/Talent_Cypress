@@ -1,5 +1,6 @@
 import { CookiesPage } from '../page/Cookies';
 import { HomePage } from '../page/Home';
+import { repeat } from '../utils/dados';
 
 const homePage = new HomePage();
 const cookiesPage = new CookiesPage();
@@ -8,6 +9,8 @@ beforeEach(() => {
     cy.visit(Cypress.env('host'));
 })
 
+Cypress._.times(repeat, () => {
+    
 describe('Site', () => {
 
     it('Verificando Header', async () => {
@@ -19,4 +22,5 @@ describe('Site', () => {
         }
         homePage.Header_Planos().click();
     });
+});
 });
