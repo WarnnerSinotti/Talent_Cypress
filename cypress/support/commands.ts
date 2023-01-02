@@ -1,4 +1,11 @@
-/// <reference types="cypress" />
+/// <reference types="cypress-xpath" />
+
+Cypress.Commands.add('login', (user, password) => { 
+  cy.get('#mat-input-0').type(user)
+  cy.get('#mat-input-1').type(password)
+  cy.contains('button', 'Entrar').click()
+ })
+
 // ***********************************************
 // This example commands.ts shows you how to
 // create various custom commands and overwrite
@@ -18,10 +25,7 @@
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
 //
 //
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
+// -- This is a dual command --Access: 
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 //
@@ -35,3 +39,4 @@
 //     }
 //   }
 // }
+
