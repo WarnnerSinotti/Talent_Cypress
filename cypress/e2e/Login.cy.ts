@@ -1,11 +1,4 @@
-import { CookiesPage } from '../page/Cookies';
-import { HomePage } from '../page/Home';
-import { BannerPage } from '../page/Banner';
 import { repeat } from '../utils/dados';
-
-const homePage = new HomePage();
-const cookiesPage = new CookiesPage();
-const bannerPage = new BannerPage();
 
 beforeEach(() => {
     cy.visit(Cypress.env('host'));
@@ -13,18 +6,32 @@ beforeEach(() => {
 
 Cypress._.times(repeat, () => {
 
-    describe('Login Correto', () => {
+    describe('Login Test', () => {
 
-        it('Verificando Header', async () => {
+        it.only('Login Correto', async () => {
             cy.allure().severity('blocker')
-            cy.wait(3000);
-
-            //cy.xpath('//*[@id="mat-input-0"]').type(Cypress.env('userName'))
-            //cy.xpath('//*[@id="mat-input-1"]').type(Cypress.env('passwordName'))
+ 
             cy.login(Cypress.env('userName'), Cypress.env('passwordName'));
 
-            
+            cy.on('window:alert',(t)=>{
+                //assertions
+                expect(t).to.contains('Usuário');
+             })
+        });
+        
+        it('Usuário Correto e Senha Incorreta', async () => {
+            cy.allure().severity('blocker')
+ 
+            cy.login(Cypress.env('userName'), "Senha123");
+
+        });
+
+        it('Usuário Incorreto e Senha Correta', async () => {
+            cy.allure().severity('blocker')
+ 
+            cy.login("Usuário", Cypress.env('passwordName'));
 
         });
     });
+
 });

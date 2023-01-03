@@ -6,7 +6,11 @@
     "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1",
       "cypress": "npx cypress open",
+      "cloud": "npx cypress run --record --key b38052f3-4432-45a3-8a87-a9f58bacadc0",
+      "cloudTest": "npx cypress run --record --key b38052f3-4432-45a3-8a87-a9f58bacadc0 --spec 'cypress/e2e/Login.cy.ts'",
+      "cloudAllureTest": "npx cypress run --env  allure=true --record --key b38052f3-4432-45a3-8a87-a9f58bacadc0 --spec 'cypress/e2e/Login.cy.ts'",
       "allure": "npx cypress run --env allure=true",
+      "allureTest": "npx cypress run --env  allure=true --spec 'cypress/e2e/Login.cy.ts'",
       "lint": "npx eslint . --ext .ts"
     },
     "author": "warnner sinotti",
