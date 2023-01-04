@@ -1,5 +1,8 @@
 /// <reference types="cypress-xpath" />
 
+const API_URL = Cypress.env('API_SERVER') //Url de Acesso
+const authorization = `Bearer ${Cypress.env('ACCESS_TOKEN')}` //Adicionar Token de Acesso
+
 Cypress.Commands.add('login', (user, password) => { 
   cy.wait(500)
   cy.get('#mat-input-0').type(user)
@@ -9,6 +12,14 @@ Cypress.Commands.add('login', (user, password) => {
   cy.contains('button', 'Entrar').click()
  })
 
+//Comando de Pegar informação do request
+Cypress.Commands.add('getUserInfo', () => {
+  cy.request({
+    method: 'GET', //Metodo
+    url: `${API_URL}me`, //Adicionar a URL
+    headers: { authorization } //Autorização de acesso
+  })
+})
 // ***********************************************
 // This example commands.ts shows you how to
 // create various custom commands and overwrite
