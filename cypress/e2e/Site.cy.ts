@@ -8,7 +8,7 @@ const cookiesPage = new CookiesPage();
 const bannerPage = new BannerPage();
 
 beforeEach(() => {
-    cy.visit(Cypress.env('homePage'));
+    cy.visit(Cypress.env('HOST'));
 })
 
 Cypress._.times(repeat, () => {
