@@ -1,7 +1,7 @@
 import { repeat } from '../utils/dados';
 
 beforeEach(() => {
-    cy.visit(Cypress.env('host'));
+    cy.visit(Cypress.env('HOST'));
 })
 
 Cypress._.times(repeat, () => {

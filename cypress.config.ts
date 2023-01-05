@@ -1,7 +1,7 @@
 import { defineConfig } from "cypress";
 const allureWriter = require('@shelex/cypress-allure-plugin/writer');
 
-export default defineConfig({
+module.exports = defineConfig({
 
   e2e: {
     //CONFIG - ALLURE
@@ -13,6 +13,7 @@ export default defineConfig({
 
     projectId: "6aa5kq", //Id https://cloud.cypress.io/
 
+    experimentalRunAllSpecs: true, //HABILITA PARA RODAR TODOS OS TESTES
     //Configuration - Screen
     //viewportWidth: 500,
     //viewportHeight: 500,

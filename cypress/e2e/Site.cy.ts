@@ -8,7 +8,11 @@ const cookiesPage = new CookiesPage();
 const bannerPage = new BannerPage();
 
 beforeEach(() => {
-    cy.visit(Cypress.env('HOST'));
+    /* APOŚ A REQUISICAO DAS APIS DO GET, FAZ OS TESTES
+     cy.intercept({
+        method: 'GET'
+    }) */
+    cy.visit(Cypress.env('URL'));
 })
 
 Cypress._.times(repeat, () => {
@@ -30,5 +34,17 @@ Cypress._.times(repeat, () => {
             homePage.Header_Planos().click();
 
         });
+
+        /*
+        Testes de erros 
+        context.skip('errors', () => {
+            it('errors', async () => {
+                
+                cy.intercept(
+                    'GET',
+                    {statusCode: 401}
+                )
+            });
+        }) */
     });
 });
