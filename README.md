@@ -40,3 +40,10 @@
 
 - Rode `npx cypress run --env allure=true` para inicializar o servidor de testes Cypress.
 - Após Testes `allure generate --clean && allure open` para gerar relatório e abrir relatório em Tela.
+
+### Política de privacidade
+
+
+
+
+

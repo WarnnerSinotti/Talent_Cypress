@@ -1,9 +1,13 @@
+
 declare namespace Cypress {
+
+
   interface Chainable {
     login(user:string, password: string): Chainable<Element>;
-    getUserInfo(): any;
+    getUserInfo();
   }
 }
+
 
 
 /* Cypress.Commands.add('getBySel', (selector: string, ...args: any[]): Cypress.CanReturnChainable => {
