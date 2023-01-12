@@ -15,11 +15,11 @@ Cypress.Commands.add('login', (user, password) => {
 //Comando de Pegar informação do request
 Cypress.Commands.add('getUserInfo', () => {
   cy.request({
-    method: 'GET', //Metodo
+    method: 'POST', //Metodo
     url: `${API_URL}/user/login`, //Adicionar a URL
     headers: {
       accept: 'application/json',
-      Authorization: 'jsonwebtoken',
+      //Authorization: 'jsonwebtoken',
       Connection:"keep-alive"
     },
     body: {
