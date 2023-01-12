@@ -16,10 +16,20 @@ Cypress.Commands.add('login', (user, password) => {
 Cypress.Commands.add('getUserInfo', () => {
   cy.request({
     method: 'GET', //Metodo
-    url: `${API_URL}me`, //Adicionar a URL
-    headers: { authorization } //Autorização de acesso
+    url: `${API_URL}/user/login`, //Adicionar a URL
+    headers: {
+      accept: 'application/json',
+      Authorization: 'jsonwebtoken',
+      Connection:"keep-alive"
+    },
+    body: {
+      email: Cypress.env('userEmail'),
+      password: Cypress.env('userPassword')
+    },
+    failOnStatusCode: false
   })
 })
+
 // ***********************************************
 // This example commands.ts shows you how to
 // create various custom commands and overwrite

@@ -1,15 +1,22 @@
 //const example = require('../fixtures/example.json')
 
+import { repeat } from "../../utils/dados";
+
+var Repeat = repeat;
+
+Cypress._.times( Repeat.api, () =>
 describe('Typeform API tests', () => {
   it.only('retrieves my user information', () => {
     cy.getUserInfo().should(({status, body}) => {
-      const { alias, email, language } = body
-  
-      expect(status).to.eq(200)
+      const { email, password, delayExpire } = body
       console.log(body)
-      expect(alias).to.eq('Warnner Sinotti')
-      expect(email).to.eq(Cypress.env('userName'))
-      expect(language).to.eq('en')
+      
+      
+      expect(email).to.eq(Cypress.env('userEmail'))
+      expect(password).to.eq(Cypress.env('userPassword'))
+      expect(delayExpire).to.eq(false)
+      console.log(body)
+      expect(status).to.eq(200)
     })
   })
   
@@ -37,3 +44,4 @@ describe('Typeform API tests', () => {
     })
   }) */
 })
+)
