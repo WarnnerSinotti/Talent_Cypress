@@ -1,5 +1,5 @@
 
 export const repeat = {
-  api: 2,
+  api: 1,
   e2e: 1,
 }

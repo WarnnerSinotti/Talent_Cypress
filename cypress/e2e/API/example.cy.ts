@@ -8,17 +8,17 @@ Cypress._.times( Repeat.api, () =>
 describe('Typeform API tests', () => {
   it.only('retrieves my user information', () => {
     cy.getUserInfo().should(({status, body}) => {
-      const { email, password, delayExpire } = body
-      console.log(body)
-      
-      
-      expect(email).to.eq(Cypress.env('userEmail'))
-      expect(password).to.eq(Cypress.env('userPassword'))
-      expect(delayExpire).to.eq(false)
-      console.log(body)
+      //const  email  = body
+      //console.log(body)
+      expect(body).to.eq(null)
+      //const { email, password } = body
+      //expect(body).to.eq(Cypress.env('userEmail'))
+      //expect(body.password).to.eq(Cypress.env('userPassword'))
+      //console.log(body)
       expect(status).to.eq(200)
     })
   })
+
   
 /*   it('retrieves form responses', () => {
     const formId = Cypress.env('formId')

@@ -26,7 +26,7 @@ Cypress.Commands.add('getUserInfo', () => {
       email: Cypress.env('userEmail'),
       password: Cypress.env('userPassword')
     },
-    failOnStatusCode: false
+    failOnStatusCode: true
   })
 })
 
